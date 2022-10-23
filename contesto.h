@@ -7,7 +7,5 @@ typedef struct
 }contesto_t;
 
 contesto_t* contesto_nuevo();
-EstrategiaTipo(contesto_t*, Estrategia)
-
-
+EstrategiaTipo(contesto_t*, Estrategia);
 #endif
