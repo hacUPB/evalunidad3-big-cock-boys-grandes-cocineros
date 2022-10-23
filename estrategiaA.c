@@ -1,6 +1,7 @@
 #include "estrategiaA.h"
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
-
 static char EstrategiaA_Organizar_Arreglo (Estrategia const * const me,  char arreglo[5]);
 static char EstrategiaA_Imprimir_Arreglo (Estrategia const * const me, char arreglo[5]);
 
@@ -17,7 +18,7 @@ void EstrategiaA_ctor(EstrategiaA * const me, int type, char arreglo[5])
 char EstrategiaA_Imprimir_Arreglo(Estrategia const * const me, char arreglo[5])
 {
     char cadena = EstrategiaA_Organizar_Arreglo(me, arreglo);
-    //printf 
+    printf("%s", cadena);
 }
 
 char EstrategiaA_Organizar_Arreglo(Estrategia const * const me, char arreglo[5])
