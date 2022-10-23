@@ -22,4 +22,12 @@ void Estrategia_ctor(Estrategia * const me, int type, char arreglo[5])
     }
 }
 
+static void Imprimir_Arreglo(Estrategia const * const me)
+{
+    assert(0);
+}
 
+static void Organizar_Arreglo(Estrategia const * const me)
+{
+    assert(0);
+}
