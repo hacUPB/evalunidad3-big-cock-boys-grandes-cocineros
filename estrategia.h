@@ -13,18 +13,17 @@ typedef struct {
 
 struct EstrategiaVtb
 {
-    void (*Organizar)(Estrategia const * const me);
-    void (*Imprimir)(Estrategia const * const me);
+    char (*Organizar)(Estrategia const * const me);
+    char (*Imprimir)(Estrategia const * const me);
 };
 
 void Estrategia_ctor(Estrategia * const me, int tipo, char arreglo[5] );
-int DefinirTipo(Estrategia const * const me);
 
-static inline void Organizar_Arreglo(Estrategia const * const me)
+static inline char Organizar_Arreglo(Estrategia const * const me)
 {
     (*me->vptr->Organizar)(me);
 }
-static inline void Imprimir_Arreglo(Estrategia const * const me)
+static inline char Imprimir_Arreglo(Estrategia const * const me)
 {
     (*me->vptr->Imprimir)(me);
 }

@@ -4,8 +4,8 @@
 #include "estrategia.h"
 #include <assert.h>
 
-static void Organizar_Arreglo(Estrategia const * const me);
-static void Imprimir_Arreglo(Estrategia const * const me);
+static char Organizar_Arreglo(Estrategia const * const me);
+static char Imprimir_Arreglo(Estrategia const * const me);
 
 void Estrategia_ctor(Estrategia * const me, int type, char arreglo[5])
 {
@@ -22,12 +22,14 @@ void Estrategia_ctor(Estrategia * const me, int type, char arreglo[5])
     }
 }
 
-static void Imprimir_Arreglo(Estrategia const * const me)
+static char Imprimir_Arreglo(Estrategia const * const me)
 {
     assert(0);
+    return 0U;
 }
 
-static void Organizar_Arreglo(Estrategia const * const me)
+static char Organizar_Arreglo(Estrategia const * const me)
 {
     assert(0);
+    return 0U;
 }
