@@ -1,8 +1,8 @@
 #include "estrategiaA.h"
 #include <stdio.h>
 
-static char EstrategiaA_Organizar_Arreglo (Estrategia const * const me);
-static char EstrategiaA_Imprimir_Arreglo (Estrategia const * const me);
+static char EstrategiaA_Organizar_Arreglo (Estrategia const * const me,  char arreglo[5]);
+static char EstrategiaA_Imprimir_Arreglo (Estrategia const * const me, char arreglo[5]);
 
 void EstrategiaA_ctor(EstrategiaA * const me, int type, char arreglo[5])
 {
@@ -14,12 +14,14 @@ void EstrategiaA_ctor(EstrategiaA * const me, int type, char arreglo[5])
     me->superclase.vptr = &vtb;
 }
 
-char EstrategiaA_Imprimir_Arreglo(Estrategia const * const me)
+char EstrategiaA_Imprimir_Arreglo(Estrategia const * const me, char arreglo[5])
 {
-    
+    char cadena = EstrategiaA_Organizar_Arreglo(me, arreglo);
+    //printf 
 }
 
-char EstrategiaA_Organizar_Arreglo(Estrategia const * const me)
+char EstrategiaA_Organizar_Arreglo(Estrategia const * const me, char arreglo[5])
 {
-    
+    char cadenaorganizada = arreglo[0] + ',' + arreglo[1] + ',' + arreglo[2] + ',' + arreglo[3] + ',' + arreglo[4];
+    return cadenaorganizada;    
 }
