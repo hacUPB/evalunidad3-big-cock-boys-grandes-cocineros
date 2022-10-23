@@ -2,30 +2,24 @@
 #include <stdlib.h>
 #include <string.h>
 #include "estrategia.h"
+#include <assert.h>
 
-estrategia_t *NuevoEstrategia()
+static void Organizar_Arreglo(Estrategia const * const me);
+static void Imprimir_Arreglo(Estrategia const * const me);
+
+void Estrategia_ctor(Estrategia * const me, int type, char arreglo[5])
 {
-
-    return (estrategia_t *)malloc(sizeof(estrategia_t)); //instancio la estrategia 
-
+    static struct EstrategiaVtb const vtb1 = 
+    {
+        &Organizar_Arreglo,
+        &Imprimir_Arreglo
+    };
+    me->vptr = &vtb1;
+    me->tipo = type;
+    for(int i = 0; i<5; i++)
+    {
+        me->cadena[i] = arreglo[i]; 
+    }
 }
-
-void Lista(void * arreglo){
-
-    char *Parreglo = malloc(sizeof(Parreglo)); // la estrategia 
-
-    strcpy(Parreglo, "No hay estrategia");
-    printf("%s", Parreglo);
-    free(Parreglo);
-
-}
-/*void estrategia_ctor(estrategia_t * this){
-    this->tipo = &Lista; //indica la direccion de memoria donde se va almacenar el dato
-}*/
-void estrategia_dtor(estrategia_t * this){
-
-    free(this);
-}
-
 
 
