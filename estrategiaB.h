@@ -2,13 +2,11 @@
 #define ESTRATEGIAB_H_
 
 #include "estrategia.h"
-typedef struct 
+typedef struct
 {
-    estrategia_t estrategia;
-    
-}estrategiaB_t;
+    Estrategia superclase;
+} EstrategiaB;
 
-void estrategia_ctor(estrategiaB_t);
+void EstrategiaB_ctor(EstrategiaB * const me, int type, char arreglo[5]);
 
-void estrategia_dtor(estrategiaB_t);
 #endif
