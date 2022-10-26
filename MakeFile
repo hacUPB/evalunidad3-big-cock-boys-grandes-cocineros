@@ -1,0 +1,15 @@
+OBJS = estrategia.o estrategiaA.o estrategiaB.o main.o 
+BINARY = Ejecutable
+CFLAGS = -g -Wall
+LDFLAGS = -lm
+ 
+Ejecutable: $(OBJS)
+ gcc -o $(BINARY) $(OBJS) $(CFLAGS) $(LDFLAGS)
+ 
+main.o: main.c estrategia.h estrategiaA.h estrategiaB.h
+estrategia.o: estrategia.c estrategia.h
+estrategiaA.o: estrategiaA.c estrategiaA.h
+estrategiaB.o: estrategiaB.c estrategiaB.h
+ 
+clean:
+ rm -f $(BINARY) $(OBJS)
